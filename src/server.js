@@ -11,10 +11,10 @@ connect()
 // setup basic routing for index route
 
 app.use('/signin', signin)
-app.use('/api', restRouter)
+app.use('/api', protect, restRouter)
 // catch all
 app.all('*', (req, res) => {
-  res.json({ok: true})
+  res.json({ ok: true })
 })
 
 export default app

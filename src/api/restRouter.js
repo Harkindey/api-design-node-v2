@@ -9,3 +9,4 @@ export const restRouter = express.Router()
 restRouter.use('/user', userRouter)
 restRouter.use('/song', songRouter)
 restRouter.use('/playlist', playlistRouter)
+restRouter.use(apiErrorHandler)  //position is essential to error handler to work, cause it bubbles up
